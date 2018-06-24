@@ -25,7 +25,7 @@ regressor=SVR(kernel='rbf')
 regressor.fit(x,y)
 
 #predicting the salary using input as no of years
-y_pred=sc_y.inverse_transform(regressor.predict(sc_x.transform(numpy.array([6]))))
+y_pred=sc_y.inverse_transform(regressor.predict(sc_x.transform(np.array([6]).reshape(1,-1))))
 
 #Visualization of SVR using graphs
 plt.scatter(x,y,color='red')
